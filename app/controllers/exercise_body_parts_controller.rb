@@ -1,0 +1,2 @@
+class ExerciseBodyPartsController < ApplicationController
+end

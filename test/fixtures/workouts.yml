@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  intensity_target: 1
+  time_target: 1
+  intensity_achieved: 1
+  time_taken: 1
+  additional_notes: MyString
+  user_id: 1
+  exercise_id: 1
+
+two:
+  name: MyString
+  intensity_target: 1
+  time_target: 1
+  intensity_achieved: 1
+  time_taken: 1
+  additional_notes: MyString
+  user_id: 1
+  exercise_id: 1
