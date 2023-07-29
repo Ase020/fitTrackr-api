@@ -18,18 +18,32 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_edit
-    user = User.find_by(id: params[:user_id])
+    user = find_user
     if user
       workout = user.workouts.find(params[:id])
       workout.update(workout_params)
       render json: workout, status: :ok
     end
   end
-  
+
+  def delete
+    user = find_user
+    workout = user.workouts.find(params[:id])
+    if workout.destroy
+      render json: { message: "Workout deleted successfully" }, status: :ok
+    else
+      render json: { error: "Failed to delete workout" }, status: :unprocessable_entity
+    end
+  end
+
 
   private
   def find_workout
     Workout.find(params[:id])
+    end
+
+  def find_user
+    User.find_by(id: params[:user_id])
   end
 
   def render_workout_not_found
@@ -43,4 +57,5 @@ class WorkoutsController < ApplicationController
   def render_unprocessable_entity(exception)
     render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
+
   end

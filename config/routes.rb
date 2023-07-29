@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   resources :equipment
   resources :body_parts
   resources :workouts, only: [:index, :show, :create]
-  resources :fitnesses
+  resources :fitnesses, only: [:index, :show, :create]
   resources :exercises
   resources :users, only: [:index] do
     patch '/workout/:id', to: 'workouts#workout_edit'
-    get '/workout/:id', to: 'workouts#workout'
+    delete '/workout/:id', to: 'workouts#delete'
   end
 
   post '/signup', to: "users#create"
