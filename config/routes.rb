@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :exercise_equipments
   resources :equipment
   resources :body_parts
-  resources :workouts
+  resources :workouts, only: [:index, :show, :create]
   resources :fitnesses
   resources :exercises
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index] do
+    patch '/workout/:id', to: 'workouts#workout_edit'
+    get '/workout/:id', to: 'workouts#workout'
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post '/signup', to: "users#create"
+
 end
