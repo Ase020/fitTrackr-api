@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :workouts, only: [:index, :show, :create]
   resources :fitnesses, only: [:index, :show, :create]
   resources :exercises
-  resources :users, only: [:index] do
+  resources :users, only: [:index, :show] do
     patch '/workout/:id', to: 'workouts#workout_edit'
     delete '/workout/:id', to: 'workouts#delete'
   end
