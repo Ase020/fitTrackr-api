@@ -1,2 +1,3 @@
 class BodyPartsController < ApplicationController
+
 end
