@@ -1,5 +1,6 @@
 class BodyPartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_body_part_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   def index
     body_parts = BodyPart.all
     render json: body_parts, status: :ok
@@ -10,10 +11,10 @@ class BodyPartsController < ApplicationController
     render json: body_part, serializer: BodyPartExerciseSerializer, status: :ok
   end
 
-  def create
-    body_part = BodyPart.create!(body_part_params)
-    render json: body_part, status: :created
-  end
+  # def create
+  #   body_part = BodyPart.create!(body_part_params)
+  #   render json: body_part, status: :created
+  # end
 
   private
   def find_body_part
@@ -26,6 +27,10 @@ class BodyPartsController < ApplicationController
 
   def body_part_params
     params.permit(:name, :image)
+  end
+
+  def render_unprocessable_entity(exception)
+    render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 
 end
