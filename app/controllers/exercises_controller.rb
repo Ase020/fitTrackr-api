@@ -9,10 +9,10 @@ class ExercisesController < ApplicationController
     exercise = find_exercise
     render json: exercise, status: :ok
   end
-  def create
-    exercise = Exercise.create!(exercise_params)
-    render json: exercise, status: :created
-  end
+  # def create
+  #   exercise = Exercise.create!(exercise_params)
+  #   render json: exercise, status: :created
+  # end
 
   private
   def exercise_params
