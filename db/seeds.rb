@@ -101,10 +101,10 @@ equipments = [
 ]
 
 
-puts "Seeding equipments..."
-
-equipments.each do |equipment|
-  Equipment.create!(equipment)
-end
-
-puts "Done seeding."
+# puts "Seeding equipments..."
+#
+# equipments.each do |equipment|
+#   Equipment.create!(equipment)
+# end
+#
+# puts "Done seeding."
