@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_28_223356) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_30_144012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,17 +69,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_28_223356) do
     t.integer "height"
     t.integer "weight"
     t.date "dob"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
-    t.integer "intensity_target"
-    t.integer "time_target"
-    t.integer "intensity_achieved"
-    t.integer "time_taken"
+    t.integer "intensity_target", default: 0
+    t.integer "time_target", default: 0
+    t.integer "intensity_achieved", default: 0
+    t.integer "time_taken", default: 0
     t.string "additional_notes"
     t.integer "user_id"
     t.integer "exercise_id"
