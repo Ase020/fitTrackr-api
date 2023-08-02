@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     delete '/workout/:id', to: 'workouts#delete'
   end
 
+  post '/users', to: 'users#create'
   post '/signup', to: "users#create"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
