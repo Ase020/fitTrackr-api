@@ -109,3 +109,27 @@ equipments = [
 #
 # puts "Done seeding."
 
+ # puts "Destroying exercises..."
+ #
+ # Exercise.destroy_all
+ #
+ # puts "Done destroying exercises"
+
+ exercise_ids = [4,5,6,7,8,9,10,11,19,20, 12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,29,30,31]
+ body_part_ids = [2..11]
+ equipment_ids = [1..9]
+ puts 'Seeding exercise body_parts...'
+
+ exercise_ids.each do |t|
+ ExerciseBodyPart.create(exercise_id: t, body_part_id: rand(2..11))
+ end
+
+ puts "Done seeding exercise body parts"
+
+ puts 'Seeding exercise equipments...'
+
+ exercise_ids.each do |t|
+   ExerciseEquipment.create(exercise_id: t, equipment_id: rand(1..9))
+ end
+
+ puts "Done seeding exercise equipments"
