@@ -108,3 +108,4 @@ equipments = [
 # end
 #
 # puts "Done seeding."
+

@@ -23,6 +23,9 @@ gem 'faker', '~> 2.17'
 gem 'active_model_serializers'
 gem 'bcrypt'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
