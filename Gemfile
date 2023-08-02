@@ -29,6 +29,10 @@ gem 'mini_magick'
 
 gem "cloudinary"
 
+gem 'mail'
+gem 'dotenv-rails'
+
+
 
 
 group :development, :test do
