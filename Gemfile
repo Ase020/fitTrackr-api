@@ -33,6 +33,9 @@ gem 'mail'
 gem 'dotenv-rails'
 
 
+gem 'actionmailer'  # This should already be included by default in a Rails app
+gem 'sendgrid-ruby' # SendGrid gem for Ruby
+gem 'react-rails'
 
 
 group :development, :test do

@@ -120,16 +120,16 @@ equipments = [
  equipment_ids = [1..9]
  puts 'Seeding exercise body_parts...'
 
- exercise_ids.each do |t|
- ExerciseBodyPart.create(exercise_id: t, body_part_id: rand(2..11))
- end
-
- puts "Done seeding exercise body parts"
-
- puts 'Seeding exercise equipments...'
-
- exercise_ids.each do |t|
-   ExerciseEquipment.create(exercise_id: t, equipment_id: rand(1..9))
- end
-
- puts "Done seeding exercise equipments"
+ # exercise_ids.each do |t|
+ # ExerciseBodyPart.create(exercise_id: t, body_part_id: rand(2..11))
+ # end
+ #
+ # puts "Done seeding exercise body parts"
+ #
+ # puts 'Seeding exercise equipments...'
+ #
+ # exercise_ids.each do |t|
+ #   ExerciseEquipment.create(exercise_id: t, equipment_id: rand(1..9))
+ # end
+ #
+ # puts "Done seeding exercise equipments"

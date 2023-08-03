@@ -7,8 +7,8 @@ require "active_model/railtie"
 require "active_record/railtie"
 # require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
-# require "action_mailbox/engine"
+require "action_mailer/railtie"
+require "action_mailbox/engine"
 # require "action_text/engine"
 require "action_view/railtie"
 # require "action_cable/engine"
@@ -52,5 +52,18 @@ module Server
     config.action_dispatch.cookies_same_site_protection = :strict
 
     config.api_only = true
+
+
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address: 'smtp.sendgrid.net', # Replace with your SMTP server
+      port: 587, # Replace with the appropriate port for your SMTP server
+      domain: 'localhost:5173', # Replace with your actual domain
+      user_name: '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', # Replace with your SMTP username
+      password: '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', # Replace with your SMTP password
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
   end
 end

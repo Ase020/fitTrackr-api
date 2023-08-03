@@ -1,0 +1,4 @@
+<h1>Email Verification</h1>
+<p>Hello <%= @user.email %>,</p>
+<p>Please click the link below to verify your email:</p>
+<p><%= api_v1_verify_email_url(@user.confirmation_token) %></p>

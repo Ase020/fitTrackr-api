@@ -13,8 +13,32 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-      render json: user, status: :created
+    @user = User.new(user_params)
+
+    if @user.save
+      UserMailer.confirmation_email(@user).deliver_now
+      render json: { message: 'User created successfully. Please check your email for verification.' }, status: :created
+    else
+      render json: { error: @user.errors.full_messages.join(', ') }, status: :unprocessable_entity
+    end
+  end
+
+  def verify_email
+    @user = User.find_by_confirmation_token(params[:token])
+
+    if @user
+      @user.update(confirmed: true, confirmation_token: nil)
+      render json: { message: 'Email verification successful. You can now log in.' }, status: :ok
+    else
+      render json: { error: 'Invalid verification token.' }, status: :not_found
+    end
+  end
+
+  def destroy
+    user = find_user
+    user.destroy
+    render json: {message: "User deleted successfully!"}, status: :ok
+
   end
 
 
