@@ -6,6 +6,7 @@ ruby "3.0.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.6"
 
+gem 'activestorage'
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -22,6 +23,16 @@ gem "rack-cors"
 gem 'faker', '~> 2.17'
 gem 'active_model_serializers'
 gem 'bcrypt'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+gem "cloudinary"
+
+gem 'mail'
+gem 'dotenv-rails'
+
+
 
 
 group :development, :test do

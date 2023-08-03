@@ -1,4 +1,6 @@
 class Exercise < ApplicationRecord
+  # mount_uploader :image, ImageUploader
+
   has_many :exercise_body_parts
   has_many :body_parts, through: :exercise_body_parts
   has_many :exercise_equipments
