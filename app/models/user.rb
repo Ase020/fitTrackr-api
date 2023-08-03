@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :fitnesses
 
   # Validations
-  # validates :username, :gender, :height, :weight, :dob, :profile_image, presence: true
+  validates :username, :gender, :height, :weight, :dob, :profile_image, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP}
   validates :password_digest, presence: true, length: { minimum: 6 }
 
