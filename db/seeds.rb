@@ -41,16 +41,16 @@
   },
 ]
 
-# puts "Seeding body parts..."
-#
-# BodyPart.destroy_all
-#
-#
-# bodyParts.each do |body_part|
-#   BodyPart.create!(body_part)
-# end
-#
-# puts "Done seeding"
+puts "Seeding body parts..."
+
+BodyPart.destroy_all
+
+
+bodyParts.each do |body_part|
+  BodyPart.create!(body_part)
+end
+
+puts "Done seeding"
 
 equipments = [
   {
@@ -101,13 +101,13 @@ equipments = [
 ]
 
 
-# puts "Seeding equipments..."
-#
-# equipments.each do |equipment|
-#   Equipment.create!(equipment)
-# end
-#
-# puts "Done seeding."
+puts "Seeding equipments..."
+
+equipments.each do |equipment|
+  Equipment.create!(equipment)
+end
+
+puts "Done seeding."
 
 
 
@@ -115,20 +115,22 @@ equipments = [
 # db/seeds.rb
 
 # Sample user data
-puts "seeding users..."
-users_data = [
-  { username: "john_doe", email: "john@example.com", gender: "Male", password: "password", profile_image: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", height: 180, weight: 75, dob: "1990-01-15", is_admin: false },
-  { username: "jane_smith", email: "jane@example.com", gender: "Female", password: "password",  profile_image: "https://thumbs.dreamstime.com/b/large-group-african-safari-animals-wildlife-conservation-concept-174172993.jpg",  height: 165, weight: 60, dob: "1992-06-20", is_admin: true },
-  # Add more sample user data as needed
-]
+# puts "seeding users..."
+# users_data = [
+#   { username: "john_doe", email: "john@example.com", gender: "Male", password: "password", profile_image: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", height: 180, weight: 75, dob: "1990-01-15", is_admin: false },
+#   { username: "jane_smith", email: "jane@example.com", gender: "Female", password: "password",  profile_image: "https://thumbs.dreamstime.com/b/large-group-african-safari-animals-wildlife-conservation-concept-174172993.jpg",  height: 165, weight: 60, dob: "1992-06-20", is_admin: true },
+#   # Add more sample user data as needed
+# ]
+#
+# puts "Done seeding"
+#
+# # Seed the users table
+# users_data.each do |user_data|
+#   User.create!(user_data)
+# end
+# \
 
-puts "Done seeding"
-
-# Seed the users table
-users_data.each do |user_data|
-  User.create!(user_data)
-end
-\
+ 
 #  # puts "Destroying exercises..."
 #  #
 #  # Exercise.destroy_all
