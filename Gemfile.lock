@@ -167,6 +167,7 @@ GEM
       activejob (= 7.0.6)
       activemodel (= 7.0.6)
       activerecord (= 7.0.6)
+      activestorage (= 7.0.6)
       activesupport (= 7.0.6)
       bundler (>= 1.15.0)
       railties (= 7.0.6)
