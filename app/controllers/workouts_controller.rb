@@ -12,7 +12,8 @@ class WorkoutsController < ApplicationController
     render json: workout, status: :ok
   end
 
-  def create
+  def workout_create
+
     workout = Workout.create!(workout_params)
     render json: workout, status: :created
   end
