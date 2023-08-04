@@ -109,27 +109,47 @@ equipments = [
 #
 # puts "Done seeding."
 
- # puts "Destroying exercises..."
- #
- # Exercise.destroy_all
- #
- # puts "Done destroying exercises"
 
- exercise_ids = [4,5,6,7,8,9,10,11,19,20, 12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,29,30,31]
- body_part_ids = [2..11]
- equipment_ids = [1..9]
- puts 'Seeding exercise body_parts...'
 
- exercise_ids.each do |t|
- ExerciseBodyPart.create(exercise_id: t, body_part_id: rand(2..11))
- end
 
- puts "Done seeding exercise body parts"
+# db/seeds.rb
 
- puts 'Seeding exercise equipments...'
+# Sample user data
+puts "seeding users..."
+users_data = [
+  { username: "john_doe", email: "john@example.com", gender: "Male", password: "password", profile_image: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", height: 180, weight: 75, dob: "1990-01-15", is_admin: false },
+  { username: "jane_smith", email: "jane@example.com", gender: "Female", password: "password",  profile_image: "https://thumbs.dreamstime.com/b/large-group-african-safari-animals-wildlife-conservation-concept-174172993.jpg",  height: 165, weight: 60, dob: "1992-06-20", is_admin: true },
+  # Add more sample user data as needed
+]
 
- exercise_ids.each do |t|
-   ExerciseEquipment.create(exercise_id: t, equipment_id: rand(1..9))
- end
+puts "Done seeding"
 
- puts "Done seeding exercise equipments"
+# Seed the users table
+users_data.each do |user_data|
+  User.create!(user_data)
+end
+\
+#  # puts "Destroying exercises..."
+#  #
+#  # Exercise.destroy_all
+#  #
+#  # puts "Done destroying exercises"
+
+#  exercise_ids = [4,5,6,7,8,9,10,11,19,20, 12,13,14,15,16,17,18,21,22,23,24,25,26,27,28,29,30,31]
+#  body_part_ids = [2..11]
+#  equipment_ids = [1..9]
+#  puts 'Seeding exercise body_parts...'
+
+#  exercise_ids.each do |t|
+#  ExerciseBodyPart.create(exercise_id: t, body_part_id: rand(2..11))
+#  end
+
+#  puts "Done seeding exercise body parts"
+
+#  puts 'Seeding exercise equipments...'
+
+#  exercise_ids.each do |t|
+#    ExerciseEquipment.create(exercise_id: t, equipment_id: rand(1..9))
+#  end
+
+#  puts "Done seeding exercise equipments"
