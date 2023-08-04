@@ -1,6 +1,8 @@
 class BodyPartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_body_part_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+
+  before_action :authorize
   def index
     body_parts = BodyPart.all
     render json: body_parts, status: :ok

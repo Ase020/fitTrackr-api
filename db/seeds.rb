@@ -130,7 +130,7 @@ puts "Done seeding."
 # end
 # \
 
- 
+
 #  # puts "Destroying exercises..."
 #  #
 #  # Exercise.destroy_all
