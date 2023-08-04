@@ -10,7 +10,6 @@ GEM
       actionpack (= 7.0.6)
       activejob (= 7.0.6)
       activerecord (= 7.0.6)
-      activestorage (= 7.0.6)
       activesupport (= 7.0.6)
       mail (>= 2.7.1)
       net-imap
@@ -36,7 +35,6 @@ GEM
     actiontext (7.0.6)
       actionpack (= 7.0.6)
       activerecord (= 7.0.6)
-      activestorage (= 7.0.6)
       activesupport (= 7.0.6)
       globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
@@ -57,11 +55,9 @@ GEM
     activemodel (7.0.6)
       activesupport (= 7.0.6)
     activerecord (7.0.6)
-      activemodel (= 7.0.6)
-      activesupport (= 7.0.6)
-    activestorage (7.0.6)
       actionpack (= 7.0.6)
       activejob (= 7.0.6)
+      activemodel (= 7.0.6)
       activerecord (= 7.0.6)
       activesupport (= 7.0.6)
       marcel (~> 1.0)
@@ -167,7 +163,6 @@ GEM
       activejob (= 7.0.6)
       activemodel (= 7.0.6)
       activerecord (= 7.0.6)
-      activestorage (= 7.0.6)
       activesupport (= 7.0.6)
       bundler (>= 1.15.0)
       railties (= 7.0.6)
@@ -213,7 +208,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  activestorage
   bcrypt
   carrierwave
   cloudinary
