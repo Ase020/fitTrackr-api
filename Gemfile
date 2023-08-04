@@ -20,7 +20,7 @@ gem "rack-cors"
 gem 'faker', '~> 2.17'
 gem 'active_model_serializers'
 gem 'bcrypt'
-gem 'active_storage'
+gem 'activestorage'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "cloudinary"
