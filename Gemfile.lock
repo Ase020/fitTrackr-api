@@ -213,6 +213,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  activestorage
   bcrypt
   carrierwave
   cloudinary
