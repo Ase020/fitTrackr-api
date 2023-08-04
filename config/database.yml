@@ -81,14 +81,13 @@ test:
 #
 
 
-
-#production:
-#  <<: *default
-#  database: server_production
-#  username: server
-#  password:
-# <%= ENV["SERVER_DATABASE_PASSWORD"] %>
-
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
+  database: server_production
+  username: server
+  password:<%= ENV["SERVER_DATABASE_PASSWORD"] %>
+
