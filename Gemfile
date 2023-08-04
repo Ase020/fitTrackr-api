@@ -43,5 +43,23 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "rack-cors"
+
+
+  gem 'active_model_serializers'
+  gem 'bcrypt'
+
+  gem 'carrierwave'
+  gem 'mini_magick'
+
+  gem "cloudinary"
+
+  gem 'mail'
+  gem 'dotenv-rails'
+
+  gem 'activestorage'
+
+
 end
 
