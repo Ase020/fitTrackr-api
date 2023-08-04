@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     post 'workouts', to: 'workouts#workout_create'
   end
 
+  post '/users', to: 'users#create'
   post '/signup', to: "users#create"
-
+  post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 end
