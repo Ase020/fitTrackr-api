@@ -10,6 +10,7 @@ GEM
       actionpack (= 7.0.6)
       activejob (= 7.0.6)
       activerecord (= 7.0.6)
+      activestorage (= 7.0.6)
       activesupport (= 7.0.6)
       mail (>= 2.7.1)
       net-imap
@@ -57,6 +58,7 @@ GEM
     activerecord (7.0.6)
       activemodel (= 7.0.6)
       activesupport (= 7.0.6)
+    activestorage (7.0.6)
       actionpack (= 7.0.6)
       activejob (= 7.0.6)
       activerecord (= 7.0.6)
