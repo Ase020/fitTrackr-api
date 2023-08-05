@@ -2,7 +2,7 @@ class EquipmentController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_equipment_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
-  before_action :authorize
+
   def index
     equipments = Equipment.all
     render json: equipments, status: :ok

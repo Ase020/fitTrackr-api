@@ -1,6 +1,7 @@
 class ExercisesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_exercise_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+  skip_before_action :authorize, only: [:index]
   def index
     exercises = Exercise.all
     render json: exercises, status: :ok
