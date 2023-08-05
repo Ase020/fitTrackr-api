@@ -2,6 +2,7 @@ class WorkoutsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_workout_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
+
   def index
     workouts = Workout.all
     render json: workouts, status: :ok
@@ -13,8 +14,9 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_create
-
-    workout = Workout.create!(workout_params)
+    user = find_user
+    workout = user.workouts.create!(workout_params)
+    # workout = Workout.create!(workout_params)
     render json: workout, status: :created
   end
 
