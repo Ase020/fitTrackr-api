@@ -559,10 +559,20 @@ equipments = [
    }
  ]
 
- puts "Seeding exercises..."
+ # puts "Seeding exercises..."
+ #
+ # exercises.each do |exercise|
+ #   Exercise.create!(name:exercise[:name], description: exercise[:description], image: exercise[:image], intensity_type: exercise[:intensity_type])
+ # end
+ #
+ # puts "Done seeding"
 
- exercises.each do |exercise|
-   Exercise.create!(name:exercise[:name], description: exercise[:description], image: exercise[:image], intensity_type: exercise[:intensity_type])
+ exercise_ids = [29]
+ body_part_ids = [10]
+ equipment_ids = [9]
+
+ 29.times do |t|
+   ExerciseEquipment.create!(exercise_id: t+1, equipment_id: rand(1..9))
+   ExerciseBodyPart.create!(exercise_id: t+1, body_part_id: rand(1..10))
  end
 
- puts "Done seeding"
