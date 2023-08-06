@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
 
   def workout_create
     user = find_user
-    workout = user.workouts.create(workout_params)
+    workout = user.workouts.create!(workout_params)
     render json: workout, status: :created
   end
 
@@ -46,7 +46,7 @@ class WorkoutsController < ApplicationController
     end
 
   def find_user
-    User.find_by(id: params[:user_id])
+    User.find(params[:user_id])
   end
 
   def render_workout_not_found
