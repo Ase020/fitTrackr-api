@@ -16,10 +16,8 @@ class UsersController < ApplicationController
   def create
     profile_image = Cloudinary::Uploader.upload(params[:profile_image])
     user = User.create(username: params[:username], email: params[:email], gender: params[:gender], password: params[:password], password_confirmation: params[:password_confirmation], profile_image: profile_image['url'], weight: params[:weight], height: params[:height], dob: params[:dob])
-    if user.valid?
       session[:user_id] = user.id
       render json: user, status: :created
-    end
   end
 
 
