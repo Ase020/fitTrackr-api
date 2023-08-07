@@ -11,7 +11,7 @@ class WorkoutsController < ApplicationController
 
   def user_workouts
     user = find_user
-    workouts = user.workouts
+    workouts = user.workouts.order(created_at: :desc)
     render json: workouts
   end
 
