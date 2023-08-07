@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     patch 'workouts/:id', to: 'workouts#workout_edit'
     delete 'workouts/:id', to: 'workouts#delete'
     post 'workouts', to: 'workouts#workout_create'
+  get '/user_workouts', to: 'workouts#user_workouts'
   end
 
   post '/users', to: 'users#create'

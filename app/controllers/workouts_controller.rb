@@ -9,6 +9,12 @@ class WorkoutsController < ApplicationController
     render json: workouts, status: :ok
   end
 
+  def user_workouts
+    user = find_user
+    workouts = user.workouts
+    render json: workouts
+  end
+
   def show
     workout = find_workout
     render json: workout, status: :ok
