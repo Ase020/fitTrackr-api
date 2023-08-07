@@ -9,7 +9,6 @@ skip_before_action :authorize
         else
         render json: {errors: ["Invalid email or password "] }, status: :unauthorized
         end
-
     end
 
     def destroy 

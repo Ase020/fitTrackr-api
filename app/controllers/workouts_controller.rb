@@ -1,6 +1,8 @@
 class WorkoutsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_workout_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+  skip_before_action :authorize
+
 
   def index
     workouts = Workout.all
@@ -13,8 +15,8 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_create
-
-    workout = Workout.create!(workout_params)
+    user = find_user
+    workout = user.workouts.create!(workout_params)
     render json: workout, status: :created
   end
 
@@ -44,7 +46,7 @@ class WorkoutsController < ApplicationController
     end
 
   def find_user
-    User.find_by(id: params[:user_id])
+    User.find(params[:user_id])
   end
 
   def render_workout_not_found
@@ -52,7 +54,7 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_params
-    params.permit( :user_id, :exercise_id, :name, :intensity_target, :time_target, :intensity_achieved, :time_taken, :additional_notes )
+    params.permit( :user_id, :exercise_id, :name, :intensity_target, :time_target, :intensity_achieved, :time_taken )
   end
 
   def render_unprocessable_entity(exception)
