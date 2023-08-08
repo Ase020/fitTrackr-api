@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-  skip_before_action :authorize, only: [:create, :index]
+  skip_before_action :authorize, only: [:create, :index, :update]
   def index
     users = User.all
     render json: users, status: :ok
@@ -18,6 +18,13 @@ class UsersController < ApplicationController
     user = User.create(username: params[:username], email: params[:email], gender: params[:gender], password: params[:password], password_confirmation: params[:password_confirmation], profile_image: profile_image['url'], weight: params[:weight], height: params[:height], dob: params[:dob])
       session[:user_id] = user.id
       render json: user, status: :created
+  end
+
+  def update
+    user = find_user
+    user.update(user_params)
+
+    render json: user, status: 202
   end
 
 
