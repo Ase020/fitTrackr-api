@@ -1,4 +1,4 @@
 Rails.application.config.action_dispatch.default_headers.merge!(
-  'Access-Control-Allow-Origin' => '*',
-  'Access-Control-Allow-Credentials' => 'true'
+  # 'Access-Control-Allow-Origin' => '*',
+  # 'Access-Control-Allow-Credentials' => 'true'
 )
