@@ -1,17 +1,21 @@
 class FitnessesController < ApplicationController
   rescue_from ActiveRecord:: RecordNotFound, with: :render_fitness_not_found
+  skip_before_action :authorize
   def index
-    fitnesses = Fitness.all
+    user = find_user
+    fitnesses = user.fitnesses
     render json: fitnesses, status: :ok
   end
 
   def show
-    fitness_history = Fitness.where(user_id: params[:user_id])
+    user = find_user
+    fitness_history = user.fitnesses.find(params[:id])
     render json: fitness_history, status: :ok
   end
 
   def create
-    fitness = Fitness.create!(fitness_params)
+    user = find_user
+    fitness = user.fitnesses.create!(fitness_params)
     if fitness.valid?
       render json: fitness, status: :created
     else
@@ -26,6 +30,10 @@ class FitnessesController < ApplicationController
 
   def render_fitness_not_found
     render json: {error: "User has no fitness history"}, status: :not_found
+  end
+
+  def find_user
+    User.find(params[:user_id])
   end
 
 end
